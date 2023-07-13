@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
+import './config/config';
+import AuthRoute from './components/AuthRoute';
+import 'react-toastify/dist/ReactToastify.css';
+import { ApolloProvider } from 'react-apollo';
+import createApolloClient from './apollo'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export interface IApplicationProps {}
 
-export default App;
+const Application: React.FunctionComponent<IApplicationProps> = (props) => {
+    return (
+        <ApolloProvider client={createApolloClient('')}>
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <AuthRoute>
+                            <HomePage />
+                        </AuthRoute>
+                    }
+                />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/signup" element={<SignUp/>} />
+            </Routes>
+        </BrowserRouter>
+        </ApolloProvider>
+    );
+};
+
+export default Application;
