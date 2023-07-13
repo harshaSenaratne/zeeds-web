@@ -35,7 +35,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
           );
         }}
       </Query>
-      <button onClick={() => signOut(auth)}>Sign out of Firebase</button>
+      <button onClick={() => signOut(auth)}>Sign out</button>
     </div>
   );
 };
