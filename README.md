@@ -1,5 +1,5 @@
 # Demo
-[screen-capture (2).webm](https://github.com/harshaSenaratne/zeeds-web/assets/25275596/9134cce9-2eb0-4b46-bf28-699b53f0ffc2)
+[screen-capture (2).webm](https://github.com/harshaSenaratne/zeeds-web/assets/25275596/2b8e8a67-5d48-4d26-902b-a30caa3dca64)
 
 
 ## Hosting Link
